@@ -2,11 +2,13 @@
 module FilterPatterns
   PUNCTUATION = ['!', '?', ';', ',', ':', '—', '"', "'", '’','.']
   PARENS = ['{', '}', '[', ']', '(', ')']
-  MISC = ['*', '@']
+  OTHER = ['*', '@']
 
-  DEFAULT = PUNCTUATION + PARENS + MISC
+  DEFAULT = PUNCTUATION + PARENS + OTHER
 
-  def self.default_filter
-    Regexp.union(DEFAULT)
+  class << self
+    def default_filter
+      Regexp.union(DEFAULT)
+    end
   end
 end
